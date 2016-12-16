@@ -1,2 +1,23 @@
 <h1>Boats#new</h1>
 <p>Find me in app/views/boats/new.html.erb</p>
+<%= form_for @boat do |f|%>
+
+<div class="field">
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name, autofocus: true %>
+    </div>
+  
+<div class="field">
+	<%= f.label :containers, "Containers" %><br />
+	<%= f.text_field :containers %>
+</div>
+
+<div class="field">
+	<%= f.label :location %><br />
+	<%= f.text_field :location %>
+</div>
+
+<div class="actions">
+	<%= f.submit "New Boat" %>
+</div>
+<% end %>
