@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   def index
+    @boats = Boat.all
   end
 
   def new
@@ -10,7 +11,7 @@ class BoatsController < ApplicationController
   end
 
   def show
-    @boats = Boat.all
+    @boats = Boat.find(params[:id])
   end
 
   def create

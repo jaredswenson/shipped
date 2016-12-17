@@ -1,2 +1,17 @@
 <h1>Boats#index</h1>
 <p>Find me in app/views/boats/index.html.erb</p>
+
+<% @boats.each do |boat| %>
+	<%= link_to "Create New Job",  new_job_path(boat_id: boat.id) %>
+	<h3>Name: <%= boat.name%></h3>
+	<p>Containers: <%= boat.containers%></p>
+	<p>Location: <%= boat.location%></p>
+	<h3>JOBS</h3>
+	<% boat.jobs.each do |job| %>
+		<%= job.name %>
+		<%= job.cost%>
+		<%= job.origin%>
+		<%= job.destination%>
+	<% end %>
+	<hr>
+<% end %>
