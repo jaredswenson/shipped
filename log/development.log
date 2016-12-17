@@ -1448,3 +1448,1125 @@ Processing by BoatsController#show as HTML
 Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/boats/2" for ::1 at 2016-12-16 16:42:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering boats/show.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/show.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 331ms (Views: 294.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/jobs" for ::1 at 2016-12-16 16:42:04 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  Rendered jobs/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/new" for ::1 at 2016-12-16 16:42:05 -0700
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (52.8ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `desitination' for #<Job:0x007fdcca60bc20>
+Did you mean?  destination
+               destination?
+               destination=):
+    20: 
+    21: <div class="field">
+    22: 	<%= f.label :desitination %><br />
+    23: 	<%= f.text_field :desitination %>
+    24: </div>
+    25: 
+    26: <div class="actions">
+  
+app/views/jobs/new.html.erb:23:in `block in _app_views_jobs_new_html_erb__105098544137226432_70293128021360'
+app/views/jobs/new.html.erb:4:in `_app_views_jobs_new_html_erb__105098544137226432_70293128021360'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.4ms)
+Started GET "/jobs/new" for ::1 at 2016-12-16 16:42:27 -0700
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 16:42:55 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VnnnD3S6uunoTHUcSAQ5Gj2AmFJXoMX4ZbTUIFy5Ft+11wIfPV/Hzjf4RVMbfX+2MMSjdf0wS+JGuM9xUvMaLg==", "job"=>{"name"=>"Haul things", "cost"=>"10.50", "origin"=>"Salt Lake City", "destination"=>"South Jordan"}, "commit"=>"New Job"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `jobs' for #<User:0x007fdcc5f78010>):
+  
+app/controllers/jobs_controller.rb:16:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.3ms)
+Started GET "/boats" for ::1 at 2016-12-16 16:46:21 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 43.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:46:25 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:46:30 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/boats/new" for ::1 at 2016-12-16 16:47:09 -0700
+Processing by BoatsController#new as HTML
+  Rendering boats/new.html.erb within layouts/application
+  Rendered boats/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 43.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:47:10 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/boats/new" for ::1 at 2016-12-16 16:47:12 -0700
+Processing by BoatsController#new as HTML
+  Rendering boats/new.html.erb within layouts/application
+  Rendered boats/new.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/boats" for ::1 at 2016-12-16 16:47:22 -0700
+Processing by BoatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IBIwIDCRVJZA6F+rm/ynACqiAkacKK/O0FfJ7FVeAEw3frDEVKJbZEg5VphmhYM4D4Y3jZ+RJBKLVZRuWzmgAQ==", "boat"=>{"name"=>"George", "containers"=>"100", "location"=>"LA"}, "commit"=>"New Boat"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "boats" ("created_at", "updated_at", "user_id", "name", "containers", "location") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-16 23:47:22 UTC], ["updated_at", 2016-12-16 23:47:22 UTC], ["user_id", 2], ["name", "George"], ["containers", 100], ["location", "LA"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/boats/3
+Completed 302 Found in 40ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/boats/3" for ::1 at 2016-12-16 16:47:22 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering boats/show.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 32.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boats/3" for ::1 at 2016-12-16 16:47:32 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering boats/show.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boats/3" for ::1 at 2016-12-16 16:48:04 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering boats/show.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:48:07 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Boats#index</h1>
+    2: <p>Find me in app/views/boats/index.html.erb</p>
+    3: 
+    4: <% @boats.each do |boat| %>
+    5: 		<h3>Name: <%= boat.name%></h3>
+    6: 		<p>Containers: <%= boat.containers%></p>
+    7: 		<p>Location: <%= boat.location%></p>
+  
+app/views/boats/index.html.erb:4:in `_app_views_boats_index_html_erb__1757770736398332064_70293131073620'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.4ms)
+Started GET "/boats" for ::1 at 2016-12-16 16:48:45 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  Rendered boats/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Boats#index</h1>
+    2: <p>Find me in app/views/boats/index.html.erb</p>
+    3: 
+    4: <% @boats.each do |boat| %>
+    5: 		<h3>Name: <%= boat.name%></h3>
+    6: 		<p>Containers: <%= boat.containers%></p>
+    7: 		<p>Location: <%= boat.location%></p>
+  
+app/views/boats/index.html.erb:4:in `_app_views_boats_index_html_erb__1757770736398332064_70293131698200'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.8ms)
+Started GET "/boats" for ::1 at 2016-12-16 16:48:46 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.6ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 66.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/boats/1" for ::1 at 2016-12-16 16:48:52 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boats/show.html.erb within layouts/application
+  Rendered boats/show.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Boat:0x007fdcc6dfb010>):
+    1: <h1>Boats#show</h1>
+    2: <p>Find me in app/views/boats/show.html.erb</p>
+    3: 
+    4: <% @boats.each do |boat| %>
+    5: 		<h3>Name: <%= boat.name%></h3>
+    6: 		<p>Containers: <%= boat.containers%></p>
+    7: 		<p>Location: <%= boat.location%></p>
+  
+app/views/boats/show.html.erb:4:in `_app_views_boats_show_html_erb__3683640169618485819_70293103037880'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.0ms)
+Started GET "/boats/1" for ::1 at 2016-12-16 16:49:29 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boats/show.html.erb within layouts/application
+  Rendered boats/show.html.erb within layouts/application (164.9ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `boat' for #<#<Class:0x007fdcc6635790>:0x007fdcc5d5bb60>
+Did you mean?  boat_url
+               boats_url
+               boat_path
+               @boats):
+    1: <h1>Boats#show</h1>
+    2: <p>Find me in app/views/boats/show.html.erb</p>
+    3: 		
+    4: <h3>Name: <%= boat.name%></h3>
+    5: <p>Containers: <%= boat.containers%></p>
+    6: <p>Location: <%= boat.location%></p>
+    7: <hr>
+  
+app/views/boats/show.html.erb:4:in `_app_views_boats_show_html_erb__3683640169618485819_70293094337080'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.9ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.2ms)
+Started GET "/boats/1" for ::1 at 2016-12-16 16:49:42 -0700
+Processing by BoatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boats/show.html.erb within layouts/application
+  Rendered boats/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Boats#show</h1>
+    2: <p>Find me in app/views/boats/show.html.erb</p>
+    3: 		
+    4: <h3>Name: <%= @boat.name%></h3>
+    5: <p>Containers: <%= @boat.containers%></p>
+    6: <p>Location: <%= @boat.location%></p>
+    7: <hr>
+  
+app/views/boats/show.html.erb:4:in `_app_views_boats_show_html_erb__3683640169618485819_70293130183300'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.1ms)
+Started GET "/boats" for ::1 at 2016-12-16 16:50:06 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:50:37 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:52:48 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  Rendered boats/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 16:52:54 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 37.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 16:54:00 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:57:23 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (54.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 88.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 16:57:24 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 16:57:26 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 55.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 16:57:39 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mfkf61UbEv0NXVIFceJ4spVO2np45Nca9rEaowa3kVU9HypRHRpOjjM3SkigqgxjbvE6mTQVZUbcw57uw4/sEQ==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"LA", "destination"=>"New York"}, "commit"=>"New Job"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat without an ID):
+  
+app/controllers/jobs_controller.rb:16:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.1ms)
+Started POST "/jobs" for ::1 at 2016-12-16 16:58:29 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mfkf61UbEv0NXVIFceJ4spVO2np45Nca9rEaowa3kVU9HypRHRpOjjM3SkigqgxjbvE6mTQVZUbcw57uw4/sEQ==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"LA", "destination"=>"New York"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:16:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.3ms)
+Started POST "/jobs" for ::1 at 2016-12-16 16:58:35 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8Fao/BL4cvfFtIl/Dmzm8Fr/YyqO4yyK5bEPdD5wST4b7+zua6c7ACi4mqvQPU3zC/GqwCrAqgImt9s3rPN1Q==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"LA", "destination"=>"New York"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:16:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.6ms)
+Started POST "/jobs" for ::1 at 2016-12-16 16:59:56 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8Fao/BL4cvfFtIl/Dmzm8Fr/YyqO4yyK5bEPdD5wST4b7+zua6c7ACi4mqvQPU3zC/GqwCrAqgImt9s3rPN1Q==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"LA", "destination"=>"New York"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:16:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.7ms)
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:11:28 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 47.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:11:30 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (18.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 53.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:11:32 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:11:43 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gv9O/TwisxO5tr9EmcCiww5VEAvLA0cH+H7g7HEikEIWGXtHdCPvYIfcpwlIiNYS9erw6Ify9VvSDGShtBrtBg==", "job"=>{"name"=>"ship", "cost"=>"1500", "origin"=>"Salt Lake City", "destination"=>"New York"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:17:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.6ms)
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:13:08 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `boat_id' for #<Job:0x007fdcc9c44368>
+Did you mean?  boat_ids
+               boat_ids=):
+    25: </div>
+    26: 
+    27: 
+    28: <%= f.hidden_field :boat_id %>
+    29: 
+    30: 
+    31: <div class="actions">
+  
+app/views/jobs/new.html.erb:28:in `block in _app_views_jobs_new_html_erb__105098544137226432_70293150370220'
+app/views/jobs/new.html.erb:4:in `_app_views_jobs_new_html_erb__105098544137226432_70293150370220'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.9ms)
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:14:21 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:15:17 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:15:47 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kPyst3YUI1HtQo/yIF5PaHeY69D4VJ7Vi9ddrj02EpdzUkmnP/FedjL2v71zJwnEetzQ91LEEM+o20b/M3weZg==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"Salt Lake City", "destination"=>"New York", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:17:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.1ms)
+Started POST "/jobs" for ::1 at 2016-12-16 17:18:35 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kPyst3YUI1HtQo/yIF5PaHeY69D4VJ7Vi9ddrj02EpdzUkmnP/FedjL2v71zJwnEetzQ91LEEM+o20b/M3weZg==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"Salt Lake City", "destination"=>"New York", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 1.9ms)
+
+
+  
+NameError (undefined local variable or method `jobs' for #<JobsController:0x007fdcc9d88be8>):
+  
+app/controllers/jobs_controller.rb:18:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (127.9ms)
+Started POST "/jobs" for ::1 at 2016-12-16 17:18:54 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kPyst3YUI1HtQo/yIF5PaHeY69D4VJ7Vi9ddrj02EpdzUkmnP/FedjL2v71zJwnEetzQ91LEEM+o20b/M3weZg==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"Salt Lake City", "destination"=>"New York", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `job' for #<JobsController:0x007fdcc9867ab0>):
+  
+app/controllers/jobs_controller.rb:18:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (116.8ms)
+Started POST "/jobs" for ::1 at 2016-12-16 17:19:03 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kPyst3YUI1HtQo/yIF5PaHeY69D4VJ7Vi9ddrj02EpdzUkmnP/FedjL2v71zJwnEetzQ91LEEM+o20b/M3weZg==", "job"=>{"name"=>"Ship", "cost"=>"1500", "origin"=>"Salt Lake City", "destination"=>"New York", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: boat_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("created_at", "updated_at", "name", "cost", "origin", "destination") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:19:04 UTC], ["updated_at", 2016-12-17 00:19:04 UTC], ["name", "Ship"], ["cost", #<BigDecimal:7fdcc9b67940,'0.15E4',9(18)>], ["origin", "Salt Lake City"], ["destination", "New York"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/2
+Completed 302 Found in 27ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/jobs/2" for ::1 at 2016-12-16 17:19:04 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:19:06 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (21.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:19:12 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:19:24 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"taHRiBBsQJcvQumXiJI2qZEkLBP3W+HVEBQWy4ubRu25R+QyWG0c5BEo8dpZ2kJ4apvM8LuqU4k6ZpKGTqM7qQ==", "job"=>{"name"=>"Another Job", "cost"=>"1000", "origin"=>"SLC", "destination"=>"LA", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: boat_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "jobs" ("created_at", "updated_at", "name", "cost", "origin", "destination") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:19:24 UTC], ["updated_at", 2016-12-17 00:19:24 UTC], ["name", "Another Job"], ["cost", #<BigDecimal:7fdcca6adca0,'0.1E4',9(18)>], ["origin", "SLC"], ["destination", "LA"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/3
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/jobs/3" for ::1 at 2016-12-16 17:19:24 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 49.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" ORDER BY "jobs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" ORDER BY "jobs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBoatjob Load (0.2ms)[0m  [1m[34mSELECT "boatjobs".* FROM "boatjobs" WHERE "boatjobs"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+Started GET "/boats" for ::1 at 2016-12-16 17:23:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (59.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 361ms (Views: 339.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:24:41 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (19.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 61.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:24:55 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DXLbDKa00s9WceoNQr05FyVrzDMvjiSPzJFkldVRg8sBlO627rWOvGgb8kCT9U3G3tQs0GN/ltPm4+DYEGn+jw==", "job"=>{"name"=>"Try Again", "cost"=>"139483", "origin"=>"SLC", "destination"=>"LA", "boat_id"=>"1"}, "commit"=>"New Job"}
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: boat_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("created_at", "updated_at", "name", "cost", "origin", "destination") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:24:55 UTC], ["updated_at", 2016-12-17 00:24:55 UTC], ["name", "Try Again"], ["cost", #<BigDecimal:7ff1655de8b0,'0.139483E6',9(18)>], ["origin", "SLC"], ["destination", "LA"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/4
+Completed 302 Found in 31ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/jobs/4" for ::1 at 2016-12-16 17:24:55 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mBoat Load (1.8ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mBoat Load (0.9ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" ORDER BY "boats"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mBoat Load (0.4ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" ORDER BY "boats"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" ORDER BY "boats"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  [1m[36mBoat Load (0.5ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" ORDER BY "boats"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  [1m[36mBoatjob Load (0.2ms)[0m  [1m[34mSELECT "boatjobs".* FROM "boatjobs"[0m
+Started GET "/boats" for ::1 at 2016-12-16 17:26:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (44.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 349ms (Views: 326.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:26:52 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (22.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 49.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:27:45 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:28:57 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.6ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:29:15 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qoPnQBDQjK37hGJIwy+PNtvEceV1QttqipjScfwQnPFJLQJQWTXxiiQwUgeQVsma1oBKwt/SVXCplMkg8lqQAA==", "job"=>{"name"=>"afjklasdjf", "cost"=>"43252", "origin"=>"SLC", "destination"=>"New York"}, "boat_id"=>"1", "commit"=>"New Job"}
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:17:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (140.5ms)
+Started POST "/jobs" for ::1 at 2016-12-16 17:29:32 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qoPnQBDQjK37hGJIwy+PNtvEceV1QttqipjScfwQnPFJLQJQWTXxiiQwUgeQVsma1oBKwt/SVXCplMkg8lqQAA==", "job"=>{"name"=>"afjklasdjf", "cost"=>"43252", "origin"=>"SLC", "destination"=>"New York"}, "boat_id"=>"1", "commit"=>"New Job"}
+  [1m[36mBoat Load (0.4ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Boat with 'id'=):
+  
+app/controllers/jobs_controller.rb:17:in `create'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+Started POST "/jobs" for ::1 at 2016-12-16 17:29:35 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qoPnQBDQjK37hGJIwy+PNtvEceV1QttqipjScfwQnPFJLQJQWTXxiiQwUgeQVsma1oBKwt/SVXCplMkg8lqQAA==", "job"=>{"name"=>"afjklasdjf", "cost"=>"43252", "origin"=>"SLC", "destination"=>"New York"}, "boat_id"=>"1", "commit"=>"New Job"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "jobs" ("created_at", "updated_at", "name", "cost", "origin", "destination") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:29:35 UTC], ["updated_at", 2016-12-17 00:29:35 UTC], ["name", "afjklasdjf"], ["cost", #<BigDecimal:7f99cef46ba8,'0.43252E5',9(18)>], ["origin", "SLC"], ["destination", "New York"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/5
+Completed 302 Found in 41ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/jobs/5" for ::1 at 2016-12-16 17:29:35 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:29:37 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" ORDER BY "jobs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBoatjob Load (0.2ms)[0m  [1m[34mSELECT "boatjobs".* FROM "boatjobs"[0m
+Started GET "/boats" for ::1 at 2016-12-16 17:32:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.1ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (48.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 335ms (Views: 312.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:32:01 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.5ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2016-12-16 17:32:03 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  Rendered jobs/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boats/new" for ::1 at 2016-12-16 17:32:04 -0700
+Processing by BoatsController#new as HTML
+  Rendering boats/new.html.erb within layouts/application
+  Rendered boats/new.html.erb within layouts/application (27.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for ::1 at 2016-12-16 17:32:06 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  Rendered jobs/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for ::1 at 2016-12-16 17:32:54 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `containers' for #<Job::ActiveRecord_Relation:0x007fe70ae78120>):
+    2: <p>Find me in app/views/jobs/index.html.erb</p>
+    3: 
+    4: <h3>Name: <%= @jobs.name%></h3>
+    5: <p>Containers: <%= @jobs.containers%></p>
+    6: <p>Location: <%= @jobs.location%></p>
+    7: <hr>
+  
+app/views/jobs/index.html.erb:5:in `_app_views_jobs_index_html_erb__1168140105460416345_70315140831020'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.8ms)
+Started GET "/jobs" for ::1 at 2016-12-16 17:33:21 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `cost' for #<Job::ActiveRecord_Relation:0x007fe71102aaf8>):
+    2: <p>Find me in app/views/jobs/index.html.erb</p>
+    3: 
+    4: <h3>Name: <%= @jobs.name%></h3>
+    5: <p>Containers: <%= @jobs.cost%></p>
+    6: <p>Location: <%= @jobs.origin%></p>
+    7: <p>Location: <%= @jobs.destination%></p>
+    8: <hr>
+  
+app/views/jobs/index.html.erb:5:in `_app_views_jobs_index_html_erb__1168140105460416345_70315199777780'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.4ms)
+Started GET "/jobs" for ::1 at 2016-12-16 17:33:38 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `cost' for #<Job::ActiveRecord_Relation:0x007fe70e5907c0>):
+    2: <p>Find me in app/views/jobs/index.html.erb</p>
+    3: 
+    4: <h3>Name: <%= @jobs.name%></h3>
+    5: <p>Containers: <%= @jobs.cost %></p>
+    6: <p>Location: <%= @jobs.origin %></p>
+    7: <p>Location: <%= @jobs.destination %></p>
+    8: <hr>
+  
+app/views/jobs/index.html.erb:5:in `_app_views_jobs_index_html_erb__1168140105460416345_70315140348320'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.6ms)
+Started GET "/jobs" for ::1 at 2016-12-16 17:34:28 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (147.1ms)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `jobs' for #<#<Class:0x007fe709fba5c0>:0x007fe70fa11aa0>
+Did you mean?  @jobs):
+    1: <h1>Jobs#index</h1>
+    2: <p>Find me in app/views/jobs/index.html.erb</p>
+    3: <% @jobs.each do |boat| %>
+    4: 	<h3>Name: <%= jobs.name%></h3>
+    5: 	<p>Containers: <%= jobs.cost %></p>
+    6: 	<p>Location: <%= jobs.origin %></p>
+    7: 	<p>Location: <%= jobs.destination %></p>
+  
+app/views/jobs/index.html.erb:4:in `block in _app_views_jobs_index_html_erb__1168140105460416345_70315188195900'
+app/views/jobs/index.html.erb:3:in `_app_views_jobs_index_html_erb__1168140105460416345_70315188195900'
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jaredswenson/.rvm/gems/ruby-2.3.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.5ms)
+Started GET "/jobs" for ::1 at 2016-12-16 17:34:47 -0700
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 73.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:44:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (45.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 329ms (Views: 307.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/jobs/new?boat_id=1" for ::1 at 2016-12-16 17:44:40 -0700
+Processing by JobsController#new as HTML
+  Parameters: {"boat_id"=>"1"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/jobs" for ::1 at 2016-12-16 17:44:50 -0700
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TIqPezwcTZJxdVpTZBIcIdnnLv3UIzhfUqhkQifT7RVAbLrBdB0R4U8fQh61WmjwIljOHpjSigN42uAP4uuQUQ==", "job"=>{"name"=>"adfsasdf", "cost"=>"12345", "origin"=>"SLC", "destination"=>"New York"}, "boat_id"=>"1", "commit"=>"New Job"}
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT  "boats".* FROM "boats" WHERE "boats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("created_at", "updated_at", "name", "cost", "origin", "destination") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:44:50 UTC], ["updated_at", 2016-12-17 00:44:50 UTC], ["name", "adfsasdf"], ["cost", #<BigDecimal:7ff999424a60,'0.12345E5',9(18)>], ["origin", "SLC"], ["destination", "New York"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "boatjobs" ("created_at", "updated_at", "job_id", "boat_id") VALUES (?, ?, ?, ?)[0m  [["created_at", 2016-12-17 00:44:50 UTC], ["updated_at", 2016-12-17 00:44:50 UTC], ["job_id", 6], ["boat_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/jobs/6
+Completed 302 Found in 28ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/jobs/6" for ::1 at 2016-12-16 17:44:50 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"6"}
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:44:52 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 66.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:45:16 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.3ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 73.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:45:32 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/boats" for ::1 at 2016-12-16 17:45:49 -0700
+Processing by BoatsController#index as HTML
+  Rendering boats/index.html.erb within layouts/application
+  [1m[36mBoat Load (0.2ms)[0m  [1m[34mSELECT "boats".* FROM "boats"[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 2]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "boatjobs" ON "jobs"."id" = "boatjobs"."job_id" WHERE "boatjobs"."boat_id" = ?[0m  [["boat_id", 3]]
+  Rendered boats/index.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 41.1ms | ActiveRecord: 0.7ms)
+
+

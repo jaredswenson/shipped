@@ -1,2 +1,35 @@
 <h1>Jobs#new</h1>
 <p>Find me in app/views/jobs/new.html.erb</p>
+
+<%= form_for @job do |f|%>
+
+<div class="field">
+    <%= f.label :name, "Name" %><br />
+    <%= f.text_field :name, autofocus: true %>
+    </div>
+  
+<div class="field">
+	<%= f.label :cost, "Cost" %><br />
+	<%= f.text_field :cost %>
+	<i>Minimum $1,000</i>
+</div>
+
+<div class="field">
+	<%= f.label :origin %><br />
+	<%= f.text_field :origin %>
+</div>
+
+<div class="field">
+	<%= f.label :destination %><br />
+	<%= f.text_field :destination %>
+</div>
+
+
+<%= hidden_field_tag :boat_id, @boat.id %>
+
+
+<div class="actions">
+	<%= f.submit "New Job" %>
+</div>
+<% end %>
+
