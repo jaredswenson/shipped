@@ -1,0 +1,19 @@
+I"D(function() {
+  $(document).on('turbolinks:load', function() {
+    $('.jobbutton').on('click', function(e) {
+      $('#job_id').val($(this).prev("input").val());
+      window.add_boats_btn = $(e.target).closest('.jobinfo');
+      return $('#myModal').modal();
+    });
+    $('#boatform').on("ajax:success", function(e) {
+      return console.log("ajfdlas");
+    }).on("ajax:error", function(e, data, status, xhr) {
+      return console.log(data);
+    });
+    return $('#addingboats').on('click', function() {
+      return $('#myModal').modal('hide');
+    });
+  });
+
+}).call(this);
+:ET

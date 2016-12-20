@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216224804) do
+ActiveRecord::Schema.define(version: 20161220220636) do
 
   create_table "boatjobs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(version: 20161216224804) do
   end
 
   create_table "boats", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.string   "name"
     t.integer  "containers"
     t.string   "location"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
@@ -38,6 +42,8 @@ ActiveRecord::Schema.define(version: 20161216224804) do
     t.decimal  "cost"
     t.string   "origin"
     t.string   "destination"
+    t.integer  "containers"
+    t.string   "description"
   end
 
   create_table "users", force: :cascade do |t|

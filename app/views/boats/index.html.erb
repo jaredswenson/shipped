@@ -2,16 +2,20 @@
 <p>Find me in app/views/boats/index.html.erb</p>
 
 <% @boats.each do |boat| %>
+	<hr>
 	<%= link_to "Create New Job",  new_job_path(boat_id: boat.id) %>
+	<%= link_to('Edit', "#{request.base_url}/boats/#{boat.id}/edit") %>
 	<h3>Name: <%= boat.name%></h3>
 	<p>Containers: <%= boat.containers%></p>
 	<p>Location: <%= boat.location%></p>
+	<%= image_tag boat.avatar.url(:thumb) %>
 	<h3>JOBS</h3>
 	<% boat.jobs.each do |job| %>
 		<%= job.name %>
 		<%= job.cost%>
 		<%= job.origin%>
 		<%= job.destination%>
+		<%= job.description%>
+		<br>
 	<% end %>
-	<hr>
 <% end %>

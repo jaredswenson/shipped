@@ -1,0 +1,11 @@
+I"÷(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('.jobbuttonl').on('click', function() {
+      $('#myModal').modal();
+      $('.job_id').val();
+      return $('.jobboat_id').val('.job_id');
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,10 @@
+I"Ð(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('.jobbuttonl').on('click', function() {
+      $('#myModal').modal();
+      return $('.job_id').val();
+    });
+  });
+
+}).call(this);
+:ET

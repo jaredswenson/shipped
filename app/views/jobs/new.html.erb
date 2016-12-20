@@ -15,13 +15,23 @@
 </div>
 
 <div class="field">
+	<%= f.label :containers, "Containers" %><br />
+	<%= f.text_field :containers %>
+</div>
+
+<div class="field">
+	<%= f.label :description, "Description" %><br />
+	<%= f.text_area :description %>
+</div>
+
+<div class="field">
 	<%= f.label :origin %><br />
-	<%= f.text_field :origin %>
+	<%= f.select :origin, ['Boston', 'New York', 'Los Angeles', 'Seattle'] %>
 </div>
 
 <div class="field">
 	<%= f.label :destination %><br />
-	<%= f.text_field :destination %>
+	<%= f.select :destination, ['Boston', 'New York', 'Los Angeles', 'Seattle'] %>
 </div>
 
 
@@ -31,5 +41,12 @@
 <div class="actions">
 	<%= f.submit "New Job" %>
 </div>
+<% if @job.errors.full_messages.any? %>   
+     <ul>     
+         <% @job.errors.full_messages.each do |error_message| %>       
+         <li><%= error_message %></li> <br />     
+         <% end %>   
+     </ul> 
+ <% end %>
 <% end %>
 

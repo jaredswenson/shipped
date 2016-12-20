@@ -1,0 +1,9 @@
+I"¶(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('.jobbuttonl').on('click', function() {
+      return $('#myModal').modal();
+    });
+  });
+
+}).call(this);
+:ET

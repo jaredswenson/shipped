@@ -1,2 +1,16 @@
 <h1>Boats#edit</h1>
 <p>Find me in app/views/boats/edit.html.erb</p>
+
+<%= form_for @boat, html: {method: :put} do |f| %>
+	<%= f.label :name, "Name"%>
+	<%= f.text_field :name %>
+	<%= f.label :containers, "Containers"%>
+	<%= f.text_field :containers %>
+	<%= f.label :location, "Location"%>
+	<%= f.text_field :location %>
+	 <%= f.file_field :avatar %>
+	<%= f.submit %>
+<% end %>
+<hr>
+
+:name, :containers, :location, :avatar)

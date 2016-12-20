@@ -1,4 +1,4 @@
-  Prefix Verb   URI Pattern                    Controller#Action
+          Prefix Verb   URI Pattern                    Controller#Action
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
@@ -30,4 +30,5 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PATCH  /jobs/:id(.:format)            jobs#update
                          PUT    /jobs/:id(.:format)            jobs#update
                          DELETE /jobs/:id(.:format)            jobs#destroy
+             addingboats POST   /addingboats(.:format)         jobs#addboats
                     root GET    /                              home#index
