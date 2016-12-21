@@ -48,7 +48,6 @@ body{
 .btn{
 	background-color: white;
 	color: #000752;
-/*	float: right;*/
 	margin-right: 3px;
 }
 
@@ -83,3 +82,12 @@ body{
  	background-color: white;
  	color: #000752;
  }
+
+ input{
+ 	color: black;
+ }
+
+.modal-body{
+	color: black;
+}
+
