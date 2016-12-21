@@ -16,6 +16,7 @@
 
 body{
 	background-color: #000752;
+	color: white;
 }
 
 #head{
@@ -47,7 +48,7 @@ body{
 .btn{
 	background-color: white;
 	color: #000752;
-	float: right;
+/*	float: right;*/
 	margin-right: 3px;
 }
 

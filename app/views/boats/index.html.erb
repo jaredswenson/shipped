@@ -2,7 +2,7 @@
 <% @boats.each do |boat| %>
 	<div class="cards">
 		<%= link_to "Create New Job",  new_job_path(boat_id: boat.id), class: "btn" %>
-		<%= link_to( "Edit Boat", "#{request.base_url}/boats/#{boat.id}/edit") %>
+		<%= link_to "Edit Boat", "#{request.base_url}/boats/#{boat.id}/edit", class: "btn" %>
 		<h3>Name: <%= boat.name%></h3>
 		<p>Containers: <%= boat.containers%></p>
 		<p>Location: <%= boat.location%></p>
