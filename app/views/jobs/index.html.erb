@@ -1,11 +1,10 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
-
 <% @jobs.each do |job| %>
-	<div class="jobinfo">
-		<%= render "all_jobs", job: job %>
+	<div class="cards">
+		<div class="jobinfo">
+			<%= render "all_jobs", job: job %>
+		</div>
+		
 	</div>
-	
 <% end %>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

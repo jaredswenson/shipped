@@ -1,7 +1,7 @@
 <h1>Boats#show</h1>
 <p>Find me in app/views/boats/show.html.erb</p>
 		
-<h3>Name: <%= @boat.name %></h3>
-<p>Containers: <%= @boat.containers%></p>
-<p>Location: <%= @boat.location%></p>
-<hr>
+<div class="user">
+	<h2><%= @boat.name %> <%= @boat.containers %></h2>
+	<%= image_tag @boat.avatar.url(:medium)%>
+</div>

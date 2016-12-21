@@ -9,16 +9,18 @@
   </head>
 
   <body>
+  <div id="head">
   	<% if user_signed_in? %>
-		<%= link_to "Sign Out",  destroy_user_session_path, method: :delete %>
-		<%= link_to "Settings",  edit_user_registration_path %>
-		<%= link_to "All My Boats",  boats_path %>
-		<%= link_to "Create New Boat",  new_boat_path %>
-		<%= link_to "All Jobs",  jobs_path %>
+		<%= link_to "Sign Out",  destroy_user_session_path, method: :delete, class: "btn" %>
+		<%= link_to "Edit User",  edit_user_registration_path, class: "btn"  %>
+		<%= link_to "All My Boats",  boats_path, class: "btn"  %>
+		<%= link_to "Create New Boat",  new_boat_path, class: "btn"  %>
+		<%= link_to "All Jobs",  jobs_path, class: "btn"  %>
 	<% else %>
-		<%= link_to "Sign In",  new_user_session_path %>
-		<%= link_to "Create Account",  new_user_registration_path %>
+		<%= link_to "Sign In",  new_user_session_path, class: "btn"  %>
+		<%= link_to "Create Account",  new_user_registration_path, class: "btn"  %>
 	<% end %>
+</div>
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
     <%= yield %>

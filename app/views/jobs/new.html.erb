@@ -1,6 +1,3 @@
-<h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
-
 <%= form_for @job do |f|%>
 
 <div class="field">
@@ -22,6 +19,7 @@
 <div class="field">
 	<%= f.label :description, "Description" %><br />
 	<%= f.text_area :description %>
+	<i>Minimum 50 character description</i>
 </div>
 
 <div class="field">

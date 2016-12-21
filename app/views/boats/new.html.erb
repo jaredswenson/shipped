@@ -1,5 +1,4 @@
-<h1>Boats#new</h1>
-<p>Find me in app/views/boats/new.html.erb</p>
+<div class="cards">
 <%= form_for @boat, :html => { :multipart => true } do |f|%>
 
 <div class="field">
@@ -20,7 +19,7 @@
  <%= f.file_field :avatar %>
 
 <div class="actions">
-	<%= f.submit "New Boat" %>
+	<%= f.submit "New Boat", class: "btn" %>
 </div>
 
 <% if @boat.errors.full_messages.any? %>   
@@ -31,3 +30,4 @@
      </ul> 
  <% end %>
 <% end %>
+</div>

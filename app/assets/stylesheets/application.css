@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+	background-color: gray;
+}
+
+#head{
+	background-color: black;
+	height: 55px;
+
+}
+
+.btn{
+	background-color: white;
+	color: black;
+	margin-top: 3px;
+	float: right;
+	margin-left: 3px;
+}
+
+ .cards{
+ 	background-color: black;
+ 	color: white;
+ 	width: 30%;
+ 	height: 300px;
+ 	display: inline;
+ 	float: left;
+ 	margin-left: 2%;
+ 	margin-top: 2%;
+ 	padding: 10px;
+ }
+
+#dLabel{
+ 	background-color: black;
+ 	border: none;
+ }
+
+ .dropdown-menu{
+ 	background-color: black;
+ 	color: white;
+ }
