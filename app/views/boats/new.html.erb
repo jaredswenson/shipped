@@ -1,6 +1,6 @@
 <div class="cards">
 <%= form_for @boat, :html => { :multipart => true } do |f|%>
-
+<h3>New Boat</h3>
 <div class="field">
     <%= f.label :name, "Name" %><br />
     <%= f.text_field :name, autofocus: true %>
@@ -19,7 +19,7 @@
  <%= f.file_field :avatar %>
 
 <div class="actions">
-	<%= f.submit "New Boat", class: "btn" %>
+	<%= f.submit "Save Boat", class: "btn" %>
 </div>
 
 <% if @boat.errors.full_messages.any? %>   

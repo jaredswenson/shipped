@@ -15,25 +15,49 @@
  */
 
 body{
-	background-color: gray;
+	background-color: #000752;
 }
 
 #head{
-	background-color: black;
+	background-color: red;
 	height: 55px;
+	border-bottom: 3px solid white;
 
+}
+
+#name{
+	color: white;
+	display: inline;
+}
+
+.headbtns{
+	background-color: white;
+	color: #000752;
+	float: right;
+	margin-top: 1%;
+	margin-right: 3px;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+.headbtns:hover{
+	background-color: yellow;
 }
 
 .btn{
 	background-color: white;
-	color: black;
-	margin-top: 3px;
+	color: #000752;
 	float: right;
-	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.btn:hover{
+	background-color: yellow;
+
 }
 
  .cards{
- 	background-color: black;
+ 	background-color: red;
  	color: white;
  	width: 30%;
  	height: 300px;
@@ -42,14 +66,19 @@ body{
  	margin-left: 2%;
  	margin-top: 2%;
  	padding: 10px;
+	box-shadow: -10px 9px 20px yellow;
  }
 
 #dLabel{
- 	background-color: black;
- 	border: none;
+ 	background-color: white;
+ 	color: #000752;
+ }
+
+ #dLabel:hover{
+ 	background-color: yellow;
  }
 
  .dropdown-menu{
- 	background-color: black;
- 	color: white;
+ 	background-color: white;
+ 	color: #000752;
  }
