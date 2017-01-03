@@ -15,10 +15,10 @@ class JobsController < ApplicationController
   end
 
   def create
-     @boat = Boat.find(params[:boat_id])
-     @job = @boat.jobs.new(job_params)
+     @boat = Boat.find(params[:boat_id]) #finds the boat you've selected
+     @job = @boat.jobs.new(job_params) #creates a new job for that boat
     if @job.save
-      @boat.jobs << @job
+      @boat.jobs << @job #adds the boat to the job you just created
       redirect_to job_path @job
     else
       render "new"
@@ -33,12 +33,12 @@ class JobsController < ApplicationController
 
   def addboats
     puts "THESE ARE THE PARAMS: #{params.inspect}"
-    @job = Job.find(params[:job_id])
+    @job = Job.find(params[:job_id]) #find the job id of the job selected
     params[:addingboats].each do |boat_id|
-    @boat = Boat.find(boat_id)
+    @boat = Boat.find(boat_id) #find the boat id of the boat selected
       respond_to do |format|
-        if @job.boats << @boat
-          format.js #send back a addboats.js.erb page with js
+        if @job.boats << @boat #adds the job and boat to create the "boatjob"
+          format.js #send back an addboats.js.erb page with js
         else
           format.json { render :json => {:error => "@job.errors.full_messages.to_sentence"}, :status => 422}
         end
@@ -51,4 +51,3 @@ class JobsController < ApplicationController
     params.require(:job).permit(:name, :cost, :origin, :destination, :description, :containers)
   end
 end
-
