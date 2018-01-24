@@ -10,13 +10,11 @@
 
   <body>
   <div id="head">
-  <h1 id="name">Boat Yard Shipping</h1>
+  <h1 id="name">Fit Bros</h1>
 	  	<% if user_signed_in? %>
 			<%= link_to "Sign Out",  destroy_user_session_path, method: :delete, class: "headbtns" %>
 			<%= link_to "Edit User",  edit_user_registration_path, class: "headbtns"  %>
-			<%= link_to "All My Boats",  boats_path, class: "headbtns"  %>
-			<%= link_to "Create New Boat",  new_boat_path, class: "headbtns"  %>
-			<%= link_to "All Jobs",  jobs_path, class: "headbtns"  %>
+
 		<% else %>
 			<%= link_to "Sign In",  new_user_session_path, class: "headbtns"  %>
 			<%= link_to "Create Account",  new_user_registration_path, class: "headbtns"  %>
@@ -24,6 +22,7 @@
 </div>
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

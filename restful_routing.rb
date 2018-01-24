@@ -1,4 +1,10 @@
-          Prefix Verb   URI Pattern                    Controller#Action
+                  Prefix Verb   URI Pattern                    Controller#Action
+              days_index GET    /days/index(.:format)          days#index
+               days_edit GET    /days/edit(.:format)           days#edit
+               days_show GET    /days/show(.:format)           days#show
+             days_create GET    /days/create(.:format)         days#create
+             days_update GET    /days/update(.:format)         days#update
+            days_destroy GET    /days/destroy(.:format)        days#destroy
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
@@ -14,21 +20,12 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PATCH  /users(.:format)               users/registrations#update
                          PUT    /users(.:format)               users/registrations#update
                          DELETE /users(.:format)               users/registrations#destroy
-                   boats GET    /boats(.:format)               boats#index
-                         POST   /boats(.:format)               boats#create
-                new_boat GET    /boats/new(.:format)           boats#new
-               edit_boat GET    /boats/:id/edit(.:format)      boats#edit
-                    boat GET    /boats/:id(.:format)           boats#show
-                         PATCH  /boats/:id(.:format)           boats#update
-                         PUT    /boats/:id(.:format)           boats#update
-                         DELETE /boats/:id(.:format)           boats#destroy
-                    jobs GET    /jobs(.:format)                jobs#index
-                         POST   /jobs(.:format)                jobs#create
-                 new_job GET    /jobs/new(.:format)            jobs#new
-                edit_job GET    /jobs/:id/edit(.:format)       jobs#edit
-                     job GET    /jobs/:id(.:format)            jobs#show
-                         PATCH  /jobs/:id(.:format)            jobs#update
-                         PUT    /jobs/:id(.:format)            jobs#update
-                         DELETE /jobs/:id(.:format)            jobs#destroy
-             addingboats POST   /addingboats(.:format)         jobs#addboats
+               exercises GET    /exercises(.:format)           exercises#index
+                         POST   /exercises(.:format)           exercises#create
+            new_exercise GET    /exercises/new(.:format)       exercises#new
+           edit_exercise GET    /exercises/:id/edit(.:format)  exercises#edit
+                exercise GET    /exercises/:id(.:format)       exercises#show
+                         PATCH  /exercises/:id(.:format)       exercises#update
+                         PUT    /exercises/:id(.:format)       exercises#update
+                         DELETE /exercises/:id(.:format)       exercises#destroy
                     root GET    /                              home#index
